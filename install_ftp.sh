@@ -9,9 +9,10 @@ echo -e "secondbreakfast\nsecondbreakfast\npippin\n\n\n\n\n" | adduser --home /h
 yes | apt install proftpd-*
 rm -f /etc/proftpd/tls.conf
 rm -f /etc/proftpd/modules.conf
+rm -f /etc/proftpd/proftpd.conf
 
 cp proftpd.conf /etc/proftpd/
-cp modules.conf tls.conf /etc/proftpd/conf.d/
+cp modules.conf tls.conf /etc/proftpd/
 
 mkdir -p /etc/proftpd/ssl
 
