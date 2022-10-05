@@ -16,7 +16,7 @@ cp modules.conf tls.conf /etc/proftpd/
 
 mkdir -p /etc/proftpd/ssl
 
-echo -e "FR\nFrance\nMarseille\nLaPlateforme\nStart\nYann\nyannick.cousinatlaplateforme.io\n" | openssl req -x509 -newkey rsa:1024 -keyout /etc/proftpd/ssl/proftpd.key.pem -out /etc/proftpd/ssl/proftpd.cert.pem -nodes -days 365
+echo -e "FR\nFrance\nMarseille\nLaPlateforme\nStart\nYann\nyannick.cousinatlaplateforme.io\n" | openssl req -new -x509 -keyout /etc/proftpd/ssl/proftpd.key.pem -days 365 -nodes -out /etc/proftpd/ssl/proftpd.cert.pem
 
 systemctl restart proftpd
 
