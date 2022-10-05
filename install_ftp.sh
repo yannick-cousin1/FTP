@@ -3,8 +3,13 @@
 yes | apt update
 yes | apt upgrade
 
+echo "/bin/false" >> /etc/shells
+addgroup ftpgroup
 echo -e "kalimac\nkalimac\nmerry\n\n\n\n\n" | adduser --home /home/merry --shell /bin/false merry
 echo -e "secondbreakfast\nsecondbreakfast\npippin\n\n\n\n\n" | adduser --home /home/pippin --shell /bin/false pippin
+
+adduser merry ftpgroup
+adduser pippin ftpgroup
 
 yes | apt install proftpd-*
 rm -f /etc/proftpd/tls.conf
