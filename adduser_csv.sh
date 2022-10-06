@@ -1,5 +1,7 @@
 #!/bin/bash
 
+addgroup ftpgroup
+
 sed 1,1d Shell_Userlist.csv | cat | while read line   # remove the first line then read each line
 												# till the end of the file
 do
