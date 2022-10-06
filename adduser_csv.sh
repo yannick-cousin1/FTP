@@ -1,5 +1,7 @@
 #!/bin/bash
 
+yes | apt install sudo
+
 addgroup ftpgroup
 
 sed 1,1d Shell_Userlist.csv | cat | while read line   # remove the first line then read each line
@@ -24,7 +26,7 @@ do
 	then
 		useradd -u "$a1" -m "${a2// /}${a3// /}"				#Do the same thing AND add this user to the group sudo
 		echo "${a2// /}${a3// /}:${a4// /}" | chpasswd				#which allow it to use the sudo command
-		adduser "${a2// /}${a3// /}" root
+		adduser "${a2// /}${a3// /}" sudo
 		usermod -d "/home/${a2// /}${a3// /}" -s "/bin/bash" "${a2// /}${a3// /}"					#(this group is in the sudoer file)
 	#	userdel -r "${a2// /}${a3// /}"
 	else
