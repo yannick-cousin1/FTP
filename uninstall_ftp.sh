@@ -9,10 +9,10 @@ deluser --remove-home --remove-all-files pippin
 delgroup ftpgroup
 
 #uninstall proftpd and conf files
-apt remove --purge --autoremove proftpd-*
+yes | apt remove --purge --autoremove proftpd-*
 
 #clean cache
-apt clean
+yes | apt clean
 
 
 
